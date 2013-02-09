@@ -1,0 +1,95 @@
+body {
+  font-family: "Tahoma";
+  font-size: 0.85em; }
+
+.current-slot {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #cccccc; }
+
+.calendar-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/calendar_image.gif");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.cal-container {
+  position: relative;
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  background: #eeeeee;
+  -webkit-box-shadow:  0 2px 3px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow:  0 2px 3px 1px rgba(0, 0, 0, 0.075);
+  -ms-box-shadow:  0 2px 3px 1px rgba(0, 0, 0, 0.075);
+  -o-box-shadow:  0 2px 3px 1px rgba(0, 0, 0, 0.075);
+  box-shadow:  0 2px 3px 1px rgba(0, 0, 0, 0.075); }
+  .cal-container:before, .cal-container:after {
+    content: " ";
+    display: table; }
+  .cal-container:after {
+    clear: both; }
+  .cal-container .controls > div {
+    position: absolute;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/ss-buttons-cal.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden; }
+  .cal-container .controls .left {
+    left: 7px; }
+  .cal-container .controls .right {
+    right: 10px;
+    background-position: -25px 0; }
+  .cal-container .month-year {
+    padding: 3px 0 13px 0;
+    text-align: center; }
+  .cal-container .days:before, .cal-container .days:after,
+  .cal-container .cells:before,
+  .cal-container .cells:after {
+    content: " ";
+    display: table; }
+  .cal-container .days:after,
+  .cal-container .cells:after {
+    clear: both; }
+  .cal-container .cells {
+    width: 175px;
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc; }
+  .cal-container .day,
+  .cal-container .cell {
+    float: left;
+    width: 25px;
+    height: 25px;
+    text-align: center; }
+  .cal-container .cell {
+    width: 24px;
+    height: auto;
+    padding: 3px 0;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    font-size: 0.8em; }
+    .cal-container .cell.is-active {
+      background: white; }
+    .cal-container .cell.is-current {
+      background: #5c8018; }
+      .cal-container .cell.is-current a {
+        color: white; }
+        .cal-container .cell.is-current a:hover {
+          text-decoration: none; }
+  .cal-container a {
+    color: black;
+    text-decoration: none; }
+    .cal-container a:hover {
+      text-decoration: underline; }
+  .cal-container .cell.is-inactive a:hover {
+    text-decoration: none; }

@@ -1,0 +1,125 @@
+@mixin replace-text
+    text-indent : 100%
+    white-space : nowrap
+    overflow : hidden
+
+@mixin box-shadow($ho, $vo, $blur, $spread, $colour, $inset : "")
+    -webkit-box-shadow : #{$inset} $ho $vo $blur $spread $colour
+    -moz-box-shadow : #{$inset} $ho $vo $blur $spread $colour
+    -ms-box-shadow : #{$inset} $ho $vo $blur $spread $colour
+    -o-box-shadow : #{$inset} $ho $vo $blur $spread $colour
+    box-shadow : #{$inset} $ho $vo $blur $spread $colour
+
+@mixin clearfix
+    &:before, &:after
+        content : " "
+        display : table
+
+    &:after
+        clear : both
+
+body
+    font :
+        family : "Tahoma"
+        size : 0.85em
+
+.current-slot
+    display : inline-block
+    padding : 5px
+    border : 1px solid #ccc
+
+.calendar-icon
+    display : inline-block
+    width : 25px
+    height : 25px
+    background :
+        image : url("../img/calendar_image.gif")
+        repeat : no-repeat
+    cursor : pointer
+    +replace-text()
+
+.cal-container
+
+    position : relative
+    width : 180px
+    padding : 10px
+    border : 1px solid #ddd
+    background : #eee
+    +box-shadow(0, 2px, 3px, 1px, rgba(0, 0, 0, 0.075))
+    +clearfix
+
+    .controls
+        > div
+            position : absolute
+            top : 10px
+
+            width : 25px
+            height : 25px
+            background :
+                image : url("../img/ss-buttons-cal.png")
+                repeat : no-repeat
+            cursor : pointer
+            +replace-text
+
+        .left
+            left : 7px
+
+        .right
+            right : 10px
+            background :
+                position : -25px 0
+
+    .month-year
+        padding : 3px 0 13px 0
+        text-align : center
+
+    .days,
+    .cells
+        +clearfix
+
+    $CELL_BORDER : 1px solid #ccc
+
+    .cells
+        width : 25 * 7px
+        border :
+            left : $CELL_BORDER
+            top  : $CELL_BORDER
+
+    .day,
+    .cell
+        float : left
+        width : 25px
+        height : 25px
+        text-align : center
+
+    .cell
+        width : 24px
+        height : auto
+        padding : 3px 0
+        border :
+            right  : $CELL_BORDER
+            bottom : $CELL_BORDER
+        font :
+            size : 0.8em
+
+        &.is-active
+            background : #fff
+
+        &.is-current
+            background : #5c8018
+
+            a
+                color : #fff
+
+                &:hover
+                    text-decoration : none
+
+    a
+        color : #000
+        text-decoration : none
+
+        &:hover
+            text-decoration : underline
+
+    .cell.is-inactive a:hover
+        text-decoration : none

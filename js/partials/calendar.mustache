@@ -1,0 +1,22 @@
+<div class="cal-inner">
+
+    <div class="controls">
+        <div class="left">Left</div>
+        <div class="right">Right</div>
+    </div>
+
+    <div class="month-year">{{month}} {{year}}</div>
+
+    <div class="days">
+    {{#days}}
+        <div class="day">{{.}}</div>
+    {{/days}}
+    </div>
+
+    <div class="cells">
+    {{#cells}}
+        <div class="cell {{type}}"><a href="{{link}}">{{day}}</a></div>
+    {{/cells}}
+    </div>
+
+</div>
