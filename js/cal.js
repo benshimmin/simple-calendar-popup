@@ -57,7 +57,7 @@ define(["hgn!partials/calendar"], function(CalendarTemplate) {
 
             this.data = this.processDate(date);
 
-            $(".cal-inner").remove();
+            this.$(".cal-inner").remove();
 
             this.processMonth();
             this.render();
