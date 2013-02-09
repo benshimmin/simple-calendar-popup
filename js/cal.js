@@ -233,7 +233,7 @@ define(["hgn!partials/calendar"], function(CalendarTemplate) {
     };
 
 
-    // expose dictionary in case it ever might need to be localised
+    // expose dictionary in case it might ever need to be localised
     Calendar.dict = dict;
 
     // simple parsing functions (easily overridden)
@@ -249,7 +249,7 @@ define(["hgn!partials/calendar"], function(CalendarTemplate) {
             return date;
         },
 
-        // this function would nee to be overridden with an appropriately-
+        // this function would need to be overridden with an appropriately-
         // formatted link
         createLink : function(date) {
             return "?" + date.valueOf();
